@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @coctails.banner_url %>');">
-  <div class="container">
+<!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @coctails.banner_url %>');">
+  <div class="container"> -->
 <h1> <%= @cocktail.name %> </h1>
-  </div>
-</div>
+ <!--  </div>
+</div> -->
+<%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
 <br>
 <ol>
   <% @cocktail.doses.each do |dose| %>
@@ -21,3 +22,5 @@
     <h1><%= @garden.name %></h1>
   </div>
 </div>
+
+
