@@ -1,2 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @coctails.banner_url %>');">
+  <div class="container">
 <h1> <%= @cocktail.name %> </h1>
-<%= link_to 'Home', :cocktails  %>
+  </div>
+</div>
+<br>
+<ol>
+  <% @cocktail.doses.each do |dose| %>
+  <li> <%= dose.description %> ||
+   <%= dose.ingredient.name %> ||
+   <%= link_to 'Delete', dose_path(dose), method: :delete %></li>
+   <% end %>
+ </ol>
+ <br>
+ <%= link_to 'Home', :cocktails  %>
+ <br>
+ <%= link_to 'Add description', new_cocktail_dose_path(@cocktail)  %>
+
+
+
+    <h1><%= @garden.name %></h1>
+  </div>
+</div>
